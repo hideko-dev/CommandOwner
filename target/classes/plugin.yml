@@ -1,0 +1,8 @@
+name: CommandOwner
+version: '1.0'
+main: dev.hideko.commandowner.CommandOwner
+api-version: '1.20'
+
+commands:
+  commandowner:
+    description: "CommandOwner by Hideko"
