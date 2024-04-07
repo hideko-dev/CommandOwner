@@ -22,14 +22,13 @@ class OwnerCommand : CommandExecutor {
                         val commandList = config.getStringList("command.$commandName")
                         for (player in Bukkit.getOnlinePlayers()) {
                             val playerName = player.name
-                            var players = 0
                             for (command in commandList) {
-                                players++
                                 val formattedCommand = command.replace("<player>", playerName)
-                                player.performCommand(formattedCommand)
+                                Bukkit.dispatchCommand(Bukkit.getConsoleSender(), formattedCommand)
+                                sender.sendMessage("§a実行に成功しました。")
                             }
-                            sender.sendMessage("§a合計${players}人のプレイヤーに実行しました。")
                         }
+                        return true
                     }
                 }
             }
